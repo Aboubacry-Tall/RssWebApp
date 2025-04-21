@@ -1,7 +1,0 @@
-{
-  "routes": {
-    "/RssWebApp": {},
-    "/RssWebApp/home": {},
-    "/RssWebApp/sources": {}
-  }
-}
