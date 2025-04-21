@@ -1,0 +1,29 @@
+<div class="grid">
+    <div class="col-8">
+        @for (source of sources(); track $index) {
+        <p-card>
+            <h2 class="text-primary "> <i class="pi pi-microsoft" style="font-size: 1rem"></i> {{source.name}}</h2>
+            @if (articlesBySource().get(source.id)?.length) {
+            @for (article of articlesBySource().get(source.id)?.slice(0, 5); track $index) {
+            <div class="mx-3" (click)=redirectTo(article.content_url) style="cursor: pointer;">
+                <h5 style="color: rgb(36, 36, 36);">{{article.name}}</h5>
+                <hr>
+            </div>
+            <!-- <p>{{article.summary}}</p> -->
+            <!-- <p-button styleClass="p-button-outlined" [rounded]="true" severity="info" icon="pi pi-external-link" label="Lire plus" (onClick)=redirectTo(article.content_url)></p-button> -->
+            }
+            <div class="text-right mt-3">
+                <p-button styleClass="p-button-outlined" label="Voir plus" severity="secondary" icon="pi pi-info-circle"
+                    [routerLink]="['/sources', source.id]"></p-button>
+            </div>
+            } @else {
+            <p>Chargement des articles... </p>
+            }
+        </p-card>
+        <div class="mb-3"> </div>
+        }
+    </div>
+    <div class="col-4">
+        <app-avis></app-avis>
+    </div>
+</div>
