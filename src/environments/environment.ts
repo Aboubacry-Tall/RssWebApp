@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  api: 'http://161.97.115.185:8069',
+  api: 'http://192.168.1.52:8069',
   rssPath : '/afrinews',
 };

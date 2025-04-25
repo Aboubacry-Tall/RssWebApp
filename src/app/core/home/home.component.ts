@@ -11,7 +11,6 @@ import { ArticleService } from '../../modules/article/article.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  items = [1, 2, 3, 4, 5, 6, 7];
   sources = signal<Source[]>([]);
   articlesBySource = signal<Map<string, Article[]>>(new Map());
   window = signal<Map<string, boolean>>(new Map());
