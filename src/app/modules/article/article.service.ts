@@ -9,13 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class ArticleService {
   private baseUrl = environment.api + environment.rssPath + '/news';
+  private language = localStorage.getItem('language') ?? 'fr';
   constructor(private http: HttpClient) {}
 
-  getArticles(): Observable<Article[]>{
-    return this.http.get<Article[]>(this.baseUrl + '/arricles');
-  }
-
   getArticleBySourceId(sourceId: string): Observable<Article[]>{
-    return this.http.get<Article[]>(this.baseUrl + '/articles/source/' + sourceId);
+    return this.http.get<Article[]>(this.baseUrl + '/articles/source/' + sourceId + '/' + this.language);
   }
 }

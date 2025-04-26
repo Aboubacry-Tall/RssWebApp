@@ -9,7 +9,5 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   subscribeToNewsletter(email: string) {
-    // TODO: Implement newsletter subscription logic
-    console.log('Newsletter subscription for:', email);
   }
 }

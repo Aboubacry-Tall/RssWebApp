@@ -27,12 +27,19 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TagModule } from 'primeng/tag';
 import { PaginatorModule } from 'primeng/paginator';
 import { FormsModule } from '@angular/forms';
+import { ChipModule } from 'primeng/chip';
 import { ArticlesComponent } from './modules/article/articles/articles.component';
 import { ArticleComponent } from './modules/article/article/article.component';
 import { SourcesComponent } from './modules/source/sources/sources.component';
 import { SourceComponent } from './modules/source/source/source.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { AvisComponent } from './layouts/avis/avis.component';
+
+// import ngx-translate and the http loader
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, withInterceptorsFromDi } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +71,15 @@ import { AvisComponent } from './layouts/avis/avis.component';
     DropdownModule,
     TagModule,
     PaginatorModule,
-    FormsModule
+    FormsModule,
+    ChipModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     provideClientHydration(withEventReplay()),
@@ -77,8 +92,14 @@ import { AvisComponent } from './layouts/avis/avis.component';
           darkModeSelector: false || 'none'
         }
       }
-    })
+    }),
+    provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './i18n/', '.json');
+}

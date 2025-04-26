@@ -1,7 +1,7 @@
 <div class="grid">
     <div class="col-12 md:col-3">
         <p-card>
-            <div class="grid mb-5">
+            <div class="grid">
                 <div class="col-4 md:col-5">
                     <img src="images/l2.png" width="100%" height="100%" alt="">
                 </div>
@@ -12,26 +12,26 @@
                         <p-button label="(222) 48-0048-94" [rounded]="true" severity="contrast"
                             styleClass="text-sm md:text-base" />
                         <br>
-                        <div class="flex justify-content-center gap-2 md:gap-3 mt-2">
-                            <a href="https://facebook.com" target="_blank"
-                                style="color: #1877F2; transition: color 0.2s;" class="hover:opacity-80">
-                                <i class="pi pi-facebook text-xl md:text-2xl"></i>
-                            </a>
-                            <a href="https://twitter.com" target="_blank"
-                                style="color: #2a2f32; transition: color 0.2s;" class="hover:opacity-80">
-                                <i class="pi pi-twitter text-xl md:text-2xl"></i>
-                            </a>
-                            <a href="https://linkedin.com" target="_blank"
-                                style="color: #0A66C2; transition: color 0.2s;" class="hover:opacity-80">
-                                <i class="pi pi-linkedin text-xl md:text-2xl"></i>
-                            </a>
-                            <a href="mailto:contact@example.com" target="_blank"
-                                style="color: #EA4335; transition: color 0.2s;" class="hover:opacity-80">
-                                <i class="pi pi-envelope text-xl md:text-2xl"></i>
-                            </a>
-                        </div>
+
                     </div>
                 </div>
+            </div>
+            <div class="flex justify-content-center text-center  md:gap-3">
+                <span class="gap-1 mt-1">
+                    <a href="https://facebook.com" target="_blank" style="color: #1877F2; transition: color 0.2s;"
+                        class="hover:opacity-80 px-1">
+                        <i class="pi pi-facebook text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" style="color: #0A66C2; transition: color 0.2s;"
+                        class="hover:opacity-80 px-1">
+                        <i class="pi pi-linkedin text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="mailto:contact@example.com" target="_blank" style="color: #EA4335; transition: color 0.2s;"
+                        class="hover:opacity-80 px-1">
+                        <i class="pi pi-envelope text-xl md:text-2xl"></i>
+                    </a>
+                </span>
+                <p-chip label="{{language}}" icon="pi pi-language" (click)="setLanguage()" [style]="{'cursor': 'pointer'}" />
             </div>
         </p-card>
     </div>
@@ -39,7 +39,8 @@
         <p-card>
             @if (primaryPub()) {
             <a [href]="primaryPub()?.url" target="_blank">
-                <img [src]="'data:image/jpeg;base64,' + primaryPub()?.image" class="w-full h-8rem md:h-10rem" [alt]="primaryPub()?.name">
+                <img [src]="'data:image/jpeg;base64,' + primaryPub()?.image" class="w-full h-8rem md:h-10rem"
+                    [alt]="primaryPub()?.name">
             </a>
             }
         </p-card>
@@ -48,13 +49,10 @@
         <p-card>
             @if (secondaryPub()) {
             <a [href]="secondaryPub()!.url" target="_blank">
-                <img [src]="'data:image/jpeg;base64,' + secondaryPub()!.image" class="w-full h-8rem md:h-10rem" [alt]="secondaryPub()!.name">
+                <img [src]="'data:image/jpeg;base64,' + secondaryPub()!.image" class="w-full h-8rem md:h-10rem"
+                    [alt]="secondaryPub()!.name">
             </a>
             }
         </p-card>
     </div>
-</div>
-
-<div class="m-3">
-
 </div>

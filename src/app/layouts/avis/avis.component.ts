@@ -19,7 +19,6 @@ export class AvisComponent {
 
   getPubs() {
     this.pubService.getPubs().subscribe((data) => {
-      console.log(data);
       this.pubs.set(data);
     });
   }

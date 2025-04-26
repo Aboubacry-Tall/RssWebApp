@@ -23,6 +23,7 @@ export class HomeComponent {
 
   getSources() {
     this.sourceService.getSources().subscribe((data) => {
+      console.log(data);
       this.sources.set(data);
       data.forEach(source => this.getArticlesBySourceId(source.id));
     });
