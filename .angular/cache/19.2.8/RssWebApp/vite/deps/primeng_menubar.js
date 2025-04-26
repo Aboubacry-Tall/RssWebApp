@@ -1,15 +1,7 @@
 import {
-  Badge,
-  BadgeModule
-} from "./chunk-TUT4TL6P.js";
-import {
   Tooltip,
   TooltipModule
 } from "./chunk-K3IFZ4LK.js";
-import {
-  zindexutils
-} from "./chunk-KICDOALA.js";
-import "./chunk-5G7WYC4N.js";
 import {
   Ripple
 } from "./chunk-V5GJKDJH.js";
@@ -18,6 +10,22 @@ import {
   AngleRightIcon,
   BarsIcon
 } from "./chunk-JRSUZQ4A.js";
+import {
+  Badge,
+  BadgeModule
+} from "./chunk-TUT4TL6P.js";
+import {
+  zindexutils
+} from "./chunk-KICDOALA.js";
+import "./chunk-5G7WYC4N.js";
+import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule
+} from "./chunk-OYWL5AJZ.js";
+import "./chunk-ZHKK4EWA.js";
+import "./chunk-NZQW6ITL.js";
+import "./chunk-Y3OPO7ZF.js";
 import {
   BaseComponent
 } from "./chunk-UN23XV2A.js";
@@ -38,13 +46,6 @@ import {
   uuid
 } from "./chunk-MWHGAFL2.js";
 import {
-  RouterLink,
-  RouterLinkActive,
-  RouterModule
-} from "./chunk-MN2UYOBA.js";
-import "./chunk-4NE4S2AO.js";
-import "./chunk-NZQW6ITL.js";
-import {
   CommonModule,
   NgClass,
   NgForOf,
@@ -52,7 +53,6 @@ import {
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-Z47FW6GY.js";
-import "./chunk-Y3OPO7ZF.js";
 import {
   DOCUMENT,
   isPlatformBrowser
