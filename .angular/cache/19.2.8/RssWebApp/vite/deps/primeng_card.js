@@ -1,24 +1,24 @@
 import {
   BaseComponent
-} from "./chunk-UN23XV2A.js";
+} from "./chunk-HYWCTPUI.js";
 import {
   BaseStyle
-} from "./chunk-GLZL2L4V.js";
+} from "./chunk-6UOKDN6U.js";
 import {
   Footer,
   Header,
   PrimeTemplate,
   SharedModule,
   equals
-} from "./chunk-MWHGAFL2.js";
+} from "./chunk-GMA3U7L3.js";
 import {
   CommonModule,
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
-} from "./chunk-Z47FW6GY.js";
-import "./chunk-IFRLBM4X.js";
+} from "./chunk-6CRC6EM2.js";
+import "./chunk-YBJJBFQK.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -56,7 +56,7 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate
-} from "./chunk-LL4POMCQ.js";
+} from "./chunk-QCDNMJR6.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/primeng/fesm2022/primeng-card.mjs

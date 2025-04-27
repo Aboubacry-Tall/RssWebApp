@@ -10,13 +10,11 @@ import { TranslateService } from "@ngx-translate/core";
 export class AppComponent {
   title = 'rss-web-app';
   constructor(private translate: TranslateService) {
-    this.translate.addLangs(['ar', 'en']);
-    this.translate.setDefaultLang('ar');
-    if (typeof window !== 'undefined') {
-      const savedLang = localStorage.getItem('language');
-      if (savedLang) {
-        this.translate.use(savedLang);
-      }
-    }
+    this.translate.addLangs(['ar', 'fr']);
+    this.translate.setDefaultLang('fr');
+    if (typeof window !== 'undefined' && window.localStorage) {
+      this.translate.use(localStorage.getItem("language") ?? 'fr');
+    } 
+    
   }
 }

@@ -1,5 +1,17 @@
 {
     "loading": "Chargement des articles...",
     "see_more": "Voir plus",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "HEADER": {
+        "CONTACTS": "Contacts",
+        "PHONE": "(222) 48-0048-94",
+        "SOCIAL": {
+            "FACEBOOK": "Suivez-nous sur Facebook",
+            "LINKEDIN": "Suivez-nous sur LinkedIn",
+            "EMAIL": "Contactez-nous par email"
+        }
+    },
+    "FOOTER": {
+        "COPYRIGHT": "© 2025 Plateforme AfriNews. Tous droits réservés."
+    }
 }

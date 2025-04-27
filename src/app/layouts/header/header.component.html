@@ -7,9 +7,9 @@
                 </div>
                 <div class="col-8 md:col-7 text-center">
                     <div class="mt-2 md:mt-3">
-                        <span class="text-2xl md:text-3xl mb-2">Contacs</span>
+                        <span class="text-2xl md:text-3xl mb-2">{{ 'HEADER.CONTACTS' | translate }}</span>
                         <br>
-                        <p-button label="(222) 48-0048-94" [rounded]="true" severity="contrast"
+                        <p-button [label]="'HEADER.PHONE' | translate" [rounded]="true" severity="contrast"
                             styleClass="text-sm md:text-base" />
                         <br>
 
@@ -19,14 +19,14 @@
             <div class="flex justify-content-center text-center  md:gap-3">
                 <span class="gap-1 mt-1">
                     <a href="https://facebook.com" target="_blank" style="color: #1877F2; transition: color 0.2s;"
-                        class="hover:opacity-80 px-1">
+                        class="hover:opacity-80 px-1" [title]="'HEADER.SOCIAL.FACEBOOK' | translate">
                         <i class="pi pi-facebook text-xl md:text-2xl"></i>
                     </a>
                     <a href="https://linkedin.com" target="_blank" style="color: #0A66C2; transition: color 0.2s;"
-                        class="hover:opacity-80 px-1">
+                        class="hover:opacity-80 px-1" [title]="'HEADER.SOCIAL.LINKEDIN' | translate">
                         <i class="pi pi-linkedin text-xl md:text-2xl"></i>
                     </a>
-                    <a href="mailto:contact@example.com" target="_blank" style="color: #EA4335; transition: color 0.2s;"
+                    <a href="mailto:contact@example.com" target="_blank" style="color: #EA4335; transition: color 0.2s;" [title]="'HEADER.SOCIAL.EMAIL' | translate"
                         class="hover:opacity-80 px-1">
                         <i class="pi pi-envelope text-xl md:text-2xl"></i>
                     </a>

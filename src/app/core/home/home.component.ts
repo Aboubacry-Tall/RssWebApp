@@ -14,15 +14,19 @@ export class HomeComponent {
   sources = signal<Source[]>([]);
   articlesBySource = signal<Map<string, Article[]>>(new Map());
   window = signal<Map<string, boolean>>(new Map());
+  language: string = "fr";
 
   constructor(public sourceService: SourceService, public articleService: ArticleService) { }
 
   ngOnInit() {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      this.language = localStorage.getItem("language") ?? 'fr';  
+    } 
     this.getSources();
   }
 
   getSources() {
-    this.sourceService.getSources().subscribe((data) => {
+    this.sourceService.getSources(this.language).subscribe((data) => {
       console.log(data);
       this.sources.set(data);
       data.forEach(source => this.getArticlesBySourceId(source.id));
@@ -30,7 +34,7 @@ export class HomeComponent {
   }
 
   getArticlesBySourceId(sourceId: string) {
-    this.articleService.getArticleBySourceId(sourceId).subscribe((data) => {
+    this.articleService.getArticleBySourceId(sourceId, this.language).subscribe((data) => {
       const currentMap = this.articlesBySource();
       currentMap.set(sourceId, data);
       this.articlesBySource.set(currentMap);

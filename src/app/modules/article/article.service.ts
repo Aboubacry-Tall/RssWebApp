@@ -9,10 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class ArticleService {
   private baseUrl = environment.api + environment.rssPath + '/news';
-  private language = localStorage.getItem('language') ?? 'fr';
   constructor(private http: HttpClient) {}
 
-  getArticleBySourceId(sourceId: string): Observable<Article[]>{
-    return this.http.get<Article[]>(this.baseUrl + '/articles/source/' + sourceId + '/' + this.language);
+  getArticleBySourceId(sourceId: string, language: string): Observable<Article[]>{
+    return this.http.get<Article[]>(this.baseUrl + '/articles/source/' + sourceId + '/' + language);
   }
 }

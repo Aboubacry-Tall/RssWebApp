@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SourceService {
   private baseUrl = environment.api + environment.rssPath + '/news';
-  private language = localStorage.getItem('language') ?? 'fr';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  getSources(): Observable<Source[]>{
-    return this.http.get<Source[]>(this.baseUrl + '/sources' + '/' + this.language);
+  getSources(language: string): Observable<Source[]>{
+    return this.http.get<Source[]>(this.baseUrl + '/sources' + '/' + language);
   }
 }

@@ -12,15 +12,19 @@ import { ArticleService } from '../../article/article.service';
 export class SourceComponent {
   sourceId = 0;
   articles = signal<Article[]>([]);
+  language: string = "fr";
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
   ngOnInit() {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      this.language = localStorage.getItem("language") ?? 'fr';  
+    } 
     this.sourceId = this.route.snapshot.params['id'];
     this.getArticlesBySourceId(this.sourceId.toString());
   }
 
   getArticlesBySourceId(sourceId: string) {
-    this.articleService.getArticleBySourceId(sourceId).subscribe((data) => {
+    this.articleService.getArticleBySourceId(sourceId, this.language).subscribe((data) => {
       this.articles.set(data);
     });
   }

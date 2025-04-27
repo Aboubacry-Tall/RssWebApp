@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Pub } from '../../modules/pub/pub.model';
 import { PubService } from '../../modules/pub/pub.service';
-import { AppComponent } from '../../app.component';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -14,8 +13,21 @@ export class HeaderComponent {
   pubs = signal<Pub[]>([]);
   primaryPub = signal<Pub | undefined>(undefined);
   secondaryPub = signal<Pub>({} as Pub);
-  language = '';
-  constructor(public pubService: PubService, public translate: TranslateService) { }
+  language: string = "";
+  ltrrtl: string = 'rtl';
+  constructor(public pubService: PubService, public translate: TranslateService) { 
+    this.translate.onLangChange.subscribe((event) => {
+      this.language = event.lang;
+      if (event.lang == 'ar') {
+          this.ltrrtl = 'rtl';
+      }
+      else {
+          this.ltrrtl = 'ltr';
+      }
+      document.getElementsByTagName("html")[0].setAttribute('lang', this.language);
+      document.getElementsByTagName("body")[0].setAttribute('dir', this.ltrrtl);
+    });
+  }
   
 
   ngOnInit() {
@@ -37,14 +49,14 @@ export class HeaderComponent {
   }
 
   setLanguage() {
-    
+    console.log("2");
     if (this.language == 'ar') {
-        this.translate.use('fr');
+        // this.translate.use('fr');
         localStorage.setItem("language", "fr");
     } else {
-        this.translate.use('ar');
+        // this.translate.use('ar');
         localStorage.setItem("language", "ar");
     }
-    location.reload();
+    window.location.reload();
   }
 }
