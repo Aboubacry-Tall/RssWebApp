@@ -42,7 +42,10 @@ export class HomeComponent {
   }
 
   // Utils
-  redirectTo(url: string) {
-    window.open(url, '_blank');
+  redirectTo(article: Article) {
+    this.articleService.updateArticleVisits(article).subscribe((data) => {
+      console.log(data);
+    });
+    window.open(article.content_url, '_blank');
   }
 }

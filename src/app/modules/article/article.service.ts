@@ -14,4 +14,9 @@ export class ArticleService {
   getArticleBySourceId(sourceId: string, language: string): Observable<Article[]>{
     return this.http.get<Article[]>(this.baseUrl + '/articles/source/' + sourceId + '/' + language);
   }
+
+  updateArticleVisits(article: Article): Observable<Article> {
+    const url = `${this.baseUrl}/articles/${article.id}/views`;
+    return this.http.put<Article>(url, article);
+  }
 }

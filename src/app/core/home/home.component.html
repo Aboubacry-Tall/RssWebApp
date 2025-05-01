@@ -5,7 +5,7 @@
             <h2 class="text-primary "> <i class="pi pi-microsoft" style="font-size: 1rem"></i> {{source.name}}</h2>
             @if (articlesBySource().get(source.id)?.length) {
             @for (article of articlesBySource().get(source.id)?.slice(0, 5); track $index) {
-            <div class="mx-3" (click)=redirectTo(article.content_url) style="cursor: pointer;">
+            <div class="mx-3" (click)=redirectTo(article) style="cursor: pointer;">
                 <h5 style="color: rgb(36, 36, 36);">{{article.name}}</h5>
                 <hr>
             </div>

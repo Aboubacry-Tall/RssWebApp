@@ -30,7 +30,8 @@ export class SourceComponent {
   }
 
   // Utils
-  redirectTo(url: string) {
-    window.open(url, '_blank');
+  redirectTo(article: Article) {
+    this.articleService.updateArticleVisits(article);
+    window.open(article.content_url, '_blank');
   }
 }
