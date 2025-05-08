@@ -7,10 +7,6 @@ import {
   zindexutils
 } from "./chunk-GQ54WHE5.js";
 import {
-  Badge,
-  BadgeModule
-} from "./chunk-SZGNSSYB.js";
-import {
   Ripple
 } from "./chunk-J5YFFZU3.js";
 import {
@@ -19,6 +15,10 @@ import {
   BarsIcon
 } from "./chunk-IEO5PCED.js";
 import "./chunk-N6625Q5J.js";
+import {
+  Badge,
+  BadgeModule
+} from "./chunk-SZGNSSYB.js";
 import {
   BaseComponent
 } from "./chunk-WYQXDSHZ.js";

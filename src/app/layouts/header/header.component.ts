@@ -59,4 +59,12 @@ export class HeaderComponent {
     }
     window.location.reload();
   }
+
+  getLanguage() {
+    if (this.language == 'ar') {
+        return 'AR';
+    } else {
+        return 'FR';
+    }
+  }
 }

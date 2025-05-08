@@ -1,4 +1,5 @@
 {
+    "app_name": "Centre El Wassat  El Mauritanie",
     "loading": "Chargement des articles...",
     "see_more": "Voir plus",
     "contacts": "Contacts",
@@ -12,6 +13,6 @@
         }
     },
     "FOOTER": {
-        "COPYRIGHT": "© 2025 Plateforme AfriNews. Tous droits réservés."
+        "COPYRIGHT": "© 2025 Plateforme Centre El Wassat El Mauritanie. Tous droits réservés."
     }
 }
