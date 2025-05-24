@@ -1,16 +1,16 @@
 import { Component, signal } from '@angular/core';
+import { Article } from '../../modules/article/article.model';
 import { ActivatedRoute } from '@angular/router';
-import { Article } from '../../article/article.model';
-import { ArticleService } from '../../article/article.service';
+import { ArticleService } from '../../modules/article/article.service';
 
 @Component({
-  selector: 'app-source',
+  selector: 'app-category',
   standalone: false,
-  templateUrl: './source.component.html',
-  styleUrl: './source.component.scss'
+  templateUrl: './category.component.html',
+  styleUrl: './category.component.scss'
 })
-export class SourceComponent {
-  sourceId = 0;
+export class CategoryComponent {
+  category = 'politique';
   articles = signal<Article[]>([]);
   loading = signal<boolean>(false);
   language: string = "fr";
@@ -20,21 +20,22 @@ export class SourceComponent {
     if (typeof window !== 'undefined' && window.localStorage) {
       this.language = localStorage.getItem("language") ?? 'fr';  
     } 
-    this.sourceId = this.route.snapshot.params['id'];
-    this.getArticlesBySourceId(this.sourceId.toString());
+    this.category = this.route.snapshot.params['category'];
+    this.getArticlesByCategory(this.category.toString());
   }
 
-  getArticlesBySourceId(sourceId: string) {
+  getArticlesByCategory(category: string) {
     this.loading.set(true);
-    this.articleService.getArticleBySourceId(sourceId, this.language).subscribe((data) => {
+    this.articleService.getArticleByCategory(category, this.language).subscribe((data) => {
+      console.log(data);
       this.articles.set(data);
       this.loading.set(false);
     });
   }
 
-  // Utils
   redirectTo(article: Article) {
     this.articleService.updateArticleVisits(article);
     window.open(article.content_url, '_blank');
   }
+
 }

@@ -1,4 +1,45 @@
-<div class="flex justify-content-between align-items-center p-2" style="background-color: #28603E;">
+<div class="shadow-4" style="background-color: #69140E;">
+    <div class="flex justify-content-around align-items-center p-2 text-white">
+        <img src="images/logo.png" (click)="redirecTo('home')" class="h-2rem" alt="Logo" style="cursor: pointer;">
+        <div><strong (click)="redirecTo('contact')" style="cursor: pointer;">{{ 'MENU.CONTACT' | translate }}</strong></div>
+        <div>|</div>
+        <div (click)="redirecTo('source/category', 'economie')" style="cursor: pointer;">{{ 'MENU.ECONOMY' | translate }}</div>
+        <div>|</div>
+        <div (click)="redirecTo('source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.POLITICS' | translate }}</div>
+        <div>|</div>
+        <div (click)="redirecTo('source/category', 'sport')" style="cursor: pointer;">{{ 'MENU.SPORTS' | translate }}</div>
+        <div>|</div>
+        <div (click)="redirecTo('sources')" style="cursor: pointer;">{{ 'MENU.SOURCES' | translate }}</div>
+        <div>|</div>
+        <div style="cursor: pointer;"><p-chip (click)="setLanguage()" label="{{getLanguage()}}"/></div>
+    </div>
+</div>
+
+<div class="p-1"></div>
+
+<div style="padding-left: 10% !important; padding-right: 10% !important;">
+    <div class="flex justify-content-between align-items-center">
+        <div class="flex-1">
+            @if (primaryPub()) {
+                <a [href]="primaryPub()?.url" target="_blank">
+                    <img [src]="'data:image/jpeg;base64,' + primaryPub()?.image" [alt]="primaryPub()?.name" style="width: 100%; height: 80px;">
+                </a>
+            }
+        </div>
+        <div class="flex-1">
+            @if (secondaryPub()) {
+                <a [href]="secondaryPub()!.url" target="_blank">
+                    <img [src]="'data:image/jpeg;base64,' + secondaryPub()!.image" style="width: 100%; height: 80px;"
+                        [alt]="secondaryPub()!.name">
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="p-1"></div>
+
+    <!-- <div class="flex justify-content-between align-items-center p-2" style="background-color: #28603E;">
     <div class="flex-none">
         <img src="images/logo.png" class="h-3rem" alt="Logo"> <span class="text-white text-3xl">{{ 'app_name' | translate }}</span>
     </div>
@@ -26,4 +67,4 @@
             </a>
         }
     </div>
-</div>
+</div> -->

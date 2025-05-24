@@ -28,6 +28,7 @@ import { TagModule } from 'primeng/tag';
 import { PaginatorModule } from 'primeng/paginator';
 import { FormsModule } from '@angular/forms';
 import { ChipModule } from 'primeng/chip';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ArticlesComponent } from './modules/article/articles/articles.component';
 import { ArticleComponent } from './modules/article/article/article.component';
 import { SourcesComponent } from './modules/source/sources/sources.component';
@@ -39,6 +40,8 @@ import { AvisComponent } from './layouts/avis/avis.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { CategoryComponent } from './core/category/category.component';
+import { ContactComponent } from './core/contact/contact.component';
 
 
 @NgModule({
@@ -55,6 +58,8 @@ import { HttpClient, withInterceptorsFromDi } from '@angular/common/http';
     SourceComponent,
     HeaderComponent,
     AvisComponent,
+    CategoryComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +78,7 @@ import { HttpClient, withInterceptorsFromDi } from '@angular/common/http';
     PaginatorModule,
     FormsModule,
     ChipModule,
+    ProgressSpinnerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

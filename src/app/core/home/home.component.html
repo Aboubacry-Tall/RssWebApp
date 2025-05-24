@@ -1,29 +1,38 @@
 <div class="grid">
-    <div class="col-12 md:col-8">
-        @for (source of sources(); track $index) {
-        <p-card>
-            <h2 class="text-primary "> <i class="pi pi-microsoft" style="font-size: 1rem"></i> {{source.name}}</h2>
+    <div class="col-12 md:col-6">
+        @for (source of sources().slice(0, sources().length / 2); track $index) {
+        <p-card class="mb-2">
+            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #69140E; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
             @if (articlesBySource().get(source.id)?.length) {
-            @for (article of articlesBySource().get(source.id)?.slice(0, 5); track $index) {
-            <div class="mx-3" (click)=redirectTo(article) style="cursor: pointer;">
-                <h5 style="color: rgb(36, 36, 36);">{{article.name}}</h5>
-                <hr>
-            </div>
-            <!-- <p>{{article.summary}}</p> -->
-            <!-- <p-button styleClass="p-button-outlined" [rounded]="true" severity="info" icon="pi pi-external-link" label="Lire plus" (onClick)=redirectTo(article.content_url)></p-button> -->
-            }
-            <div class="text-right mt-3">
-                <p-button styleClass="p-button-outlined" [label]="'see_more' | translate" severity="secondary" icon="pi pi-info-circle"
-                    [routerLink]="['/sources', source.id]"></p-button>
-            </div>
+                @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
+                    <div class="mx-2 py-1" (click)=redirectTo(article) style="cursor: pointer;">
+                        <p class="text-sm text-600 m-0">{{article.name}}</p>
+                        <hr class="my-1">
+                    </div>
+                }
             } @else {
-            <p>{{ 'loading' | translate }}</p>
+                <p class="text-sm">{{ 'loading' | translate }}</p>
             }
         </p-card>
-        <div class="mb-3"> </div>
+        <div class="p-1"></div>
         }
     </div>
-    <div class="col-12 md:col-4 mt-3 md:mt-0">
-        <app-avis></app-avis>
+    <div class="col-12 md:col-6">
+        @for (source of sources().slice(sources().length / 2); track $index) {
+        <p-card class="mb-2">
+            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #69140E; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
+            @if (articlesBySource().get(source.id)?.length) {
+                @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
+                    <div class="mx-2 py-1" (click)=redirectTo(article) style="cursor: pointer;">
+                        <p class="text-sm text-600 m-0">{{article.name}}</p>
+                        <hr class="my-1">
+                    </div>
+                }
+            } @else {
+                <p class="text-sm">{{ 'loading' | translate }}</p>
+            }
+        </p-card>
+        <div class="p-1"></div>
+        }
     </div>
 </div>

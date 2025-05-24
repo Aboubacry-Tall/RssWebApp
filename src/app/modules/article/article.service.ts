@@ -19,4 +19,8 @@ export class ArticleService {
     const url = `${this.baseUrl}/articles/${article.id}/views`;
     return this.http.put<Article>(url, article);
   }
+
+  getArticleByCategory(category: string, language: string): Observable<Article[]>{
+    return this.http.get<Article[]>(this.baseUrl + '/articles/category/' + category + '/' + language);
+  }
 }

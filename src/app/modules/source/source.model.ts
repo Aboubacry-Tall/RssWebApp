@@ -8,4 +8,5 @@ export interface Source {
   auto_import: boolean; // fields.Boolean('Auto Import Enabled', default=True)
   language: 'fr' | 'ar' | 'en'; // fields.Selection([('fr', 'Français'), ('ar', 'Arabe'), ('en', 'Anglais')], string='Language', default='fr')
   article_ids: string[]; // fields.One2many('news.article', 'source_id', string='Articles')
+  is_gov: boolean;
 }

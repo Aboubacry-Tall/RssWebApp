@@ -3,6 +3,19 @@
     "loading": "جارٍ تحميل المقالات...",
     "see_more": "عرض المزيد",
     "contacts": "جهات الاتصال",
+    "SOURCES": {
+        "LATEST_ARTICLES": "أحدث المقالات",
+        "ARTICLES_COUNT": "عدد المقالات",
+        "GOVERNMENT": "مصدر حكومي"
+    },
+    "MENU": {
+        "HOME": "الرئيسية",
+        "CONTACT": "اتصل بنا",
+        "ECONOMY": "الاقتصاد",
+        "POLITICS": "السياسة",
+        "SPORTS": "الرياضة",
+        "SOURCES": "المصادر"
+    },
     "HEADER": {
         "CONTACTS": "جهات الاتصال",
         "PHONE": "(222) 48-0048-94",

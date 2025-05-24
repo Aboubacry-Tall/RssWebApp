@@ -1,0 +1,39 @@
+<div class="grid">
+    <div class="col-12 md:col-8 md:col-offset-2">
+        <p-card>
+            <div class="text-center mb-5">
+                <h2 class="text-4xl font-bold mb-2">{{ 'HEADER.CONTACTS' | translate }}</h2>
+                <p class="text-xl text-700">{{ 'HEADER.PHONE' | translate }}</p>
+            </div>
+
+            <div class="grid">
+                <div class="col-12 md:col-4">
+                    <p-card styleClass="text-center h-full">
+                        <i class="pi pi-facebook text-4xl text-primary mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">Facebook</h3>
+                        <p class="text-700 mb-3">{{ 'HEADER.SOCIAL.FACEBOOK' | translate }}</p>
+                        <p-button styleClass="p-button-outlined" icon="pi pi-external-link" label="Facebook" (onClick)="redirectTo('https://facebook.com')"></p-button>
+                    </p-card>
+                </div>
+
+                <div class="col-12 md:col-4">
+                    <p-card styleClass="text-center h-full">
+                        <i class="pi pi-linkedin text-4xl text-primary mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+                        <p class="text-700 mb-3">{{ 'HEADER.SOCIAL.LINKEDIN' | translate }}</p>
+                        <p-button styleClass="p-button-outlined" icon="pi pi-external-link" label="LinkedIn" (onClick)="redirectTo('https://linkedin.com')"></p-button>
+                    </p-card>
+                </div>
+
+                <div class="col-12 md:col-4">
+                    <p-card styleClass="text-center h-full">
+                        <i class="pi pi-envelope text-4xl text-primary mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">Email</h3>
+                        <p class="text-700 mb-3">{{ 'HEADER.SOCIAL.EMAIL' | translate }}</p>
+                        <p-button styleClass="p-button-outlined" icon="pi pi-send" label="Email" (onClick)="redirectTo('mailto:contact@example.com')"></p-button>
+                    </p-card>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

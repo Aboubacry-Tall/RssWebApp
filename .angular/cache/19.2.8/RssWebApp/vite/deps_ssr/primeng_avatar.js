@@ -1,19 +1,19 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   BaseComponent
-} from "./chunk-WYQXDSHZ.js";
+} from "./chunk-IJBMXMLR.js";
 import {
   BaseStyle
-} from "./chunk-A4U7KSHU.js";
+} from "./chunk-XGLROU7S.js";
 import {
   SharedModule
-} from "./chunk-VSB7ZPLB.js";
+} from "./chunk-55XAUQSL.js";
 import {
   CommonModule,
   NgClass,
   NgIf
-} from "./chunk-5453LF4I.js";
-import "./chunk-JP3BUQ3U.js";
+} from "./chunk-HEL4KHMX.js";
+import "./chunk-6UDNSRQL.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -55,7 +55,7 @@ import {
   ɵɵtemplateRefExtractor,
   ɵɵtext,
   ɵɵtextInterpolate
-} from "./chunk-FFZVCUAZ.js";
+} from "./chunk-XIO776JD.js";
 import "./chunk-YHCV7DAQ.js";
 
 // node_modules/primeng/fesm2022/primeng-avatar.mjs
