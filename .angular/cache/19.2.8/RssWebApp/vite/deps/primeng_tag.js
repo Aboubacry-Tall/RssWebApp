@@ -1,20 +1,20 @@
 import {
   BaseComponent
-} from "./chunk-HYWCTPUI.js";
+} from "./chunk-UN23XV2A.js";
 import {
   BaseStyle
-} from "./chunk-6UOKDN6U.js";
+} from "./chunk-GLZL2L4V.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-GMA3U7L3.js";
+} from "./chunk-MWHGAFL2.js";
 import {
   CommonModule,
   NgClass,
   NgIf,
   NgTemplateOutlet
-} from "./chunk-6CRC6EM2.js";
-import "./chunk-YBJJBFQK.js";
+} from "./chunk-Z47FW6GY.js";
+import "./chunk-IFRLBM4X.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -52,7 +52,7 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate
-} from "./chunk-QCDNMJR6.js";
+} from "./chunk-LL4POMCQ.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/primeng/fesm2022/primeng-tag.mjs

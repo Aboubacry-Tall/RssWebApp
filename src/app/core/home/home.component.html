@@ -1,8 +1,8 @@
 <div class="grid">
     <div class="col-12 md:col-6">
         @for (source of sources().slice(0, sources().length / 2); track $index) {
-        <p-card class="mb-2">
-            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #69140E; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
+        <div class="shadow-4 p-2 mb-2 bg-white border-round-xl" >
+            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #2C3DBB; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
             @if (articlesBySource().get(source.id)?.length) {
                 @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
                     <div class="mx-2 py-1" (click)=redirectTo(article) style="cursor: pointer;">
@@ -13,14 +13,14 @@
             } @else {
                 <p class="text-sm">{{ 'loading' | translate }}</p>
             }
-        </p-card>
+        </div>
         <div class="p-1"></div>
         }
     </div>
     <div class="col-12 md:col-6">
         @for (source of sources().slice(sources().length / 2); track $index) {
-        <p-card class="mb-2">
-            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #69140E; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
+        <div class="shadow-4 p-2 mb-2 bg-white border-round-xl">
+            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #2C3DBB; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
             @if (articlesBySource().get(source.id)?.length) {
                 @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
                     <div class="mx-2 py-1" (click)=redirectTo(article) style="cursor: pointer;">
@@ -31,7 +31,7 @@
             } @else {
                 <p class="text-sm">{{ 'loading' | translate }}</p>
             }
-        </p-card>
+        </div>
         <div class="p-1"></div>
         }
     </div>

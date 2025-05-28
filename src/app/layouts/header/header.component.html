@@ -1,7 +1,10 @@
-<div class="shadow-4" style="background-color: #69140E;">
+<div class="shadow-4" style="background-color: #2C3DBB;">
     <div class="flex justify-content-around align-items-center p-2 text-white">
         <img src="images/logo.png" (click)="redirecTo('home')" class="h-2rem" alt="Logo" style="cursor: pointer;">
-        <div><strong (click)="redirecTo('contact')" style="cursor: pointer;">{{ 'MENU.CONTACT' | translate }}</strong></div>
+        <div>
+            <p style="font-size: 18px;">{{'app_name' | translate }}</p>
+            <!-- <strong (click)="redirecTo('contact')" style="cursor: pointer;">{{ 'MENU.CONTACT' | translate }}</strong> -->
+        </div>
         <div>|</div>
         <div (click)="redirecTo('source/category', 'economie')" style="cursor: pointer;">{{ 'MENU.ECONOMY' | translate }}</div>
         <div>|</div>
