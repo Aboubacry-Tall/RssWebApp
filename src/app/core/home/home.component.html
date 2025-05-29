@@ -1,11 +1,15 @@
 <div class="grid">
     <div class="col-12 md:col-6">
         @for (source of sources().slice(0, sources().length / 2); track $index) {
-        <div class="shadow-4 p-2 mb-2 bg-white border-round-xl" >
-            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #2C3DBB; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
+        <div class="shadow-4 bg-white border-round-xl" >
+            <div class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #2C3DBB; cursor: pointer; font-weight: bold;">
+                <span class="border mt-1">
+                    {{source.name}}
+                </span>
+            </div>
             @if (articlesBySource().get(source.id)?.length) {
                 @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
-                    <div class="mx-2 py-1" (click)=redirectTo(article) style="cursor: pointer;">
+                    <div class="mx-2 py-1 px-2" (click)=redirectTo(article) style="cursor: pointer;">
                         <p class="text-sm text-600 m-0">{{article.name}}</p>
                         <hr class="my-1">
                     </div>
@@ -19,11 +23,15 @@
     </div>
     <div class="col-12 md:col-6">
         @for (source of sources().slice(sources().length / 2); track $index) {
-        <div class="shadow-4 p-2 mb-2 bg-white border-round-xl">
-            <h3 class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #2C3DBB; cursor: pointer;"> <i class="pi pi-microsoft" style="font-size: 0.875rem"></i> {{source.name}}</h3>
+        <div class="shadow-4 bg-white border-round-xl">
+            <div class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="color: #2C3DBB; cursor: pointer; font-weight: bold;"> 
+                <span class="border mt-1">
+                    {{source.name}}
+                </span>
+            </div>
             @if (articlesBySource().get(source.id)?.length) {
                 @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
-                    <div class="mx-2 py-1" (click)=redirectTo(article) style="cursor: pointer;">
+                    <div class="mx-2 py-1 px-2" (click)=redirectTo(article) style="cursor: pointer;">
                         <p class="text-sm text-600 m-0">{{article.name}}</p>
                         <hr class="my-1">
                     </div>

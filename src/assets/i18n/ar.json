@@ -14,7 +14,8 @@
         "ECONOMY": "الاقتصاد",
         "POLITICS": "السياسة",
         "SPORTS": "الرياضة",
-        "SOURCES": "المصادر"
+        "SOURCES": "المصادر",
+        "TECHNOLOGIES": "التكنولوجيا"
     },
     "HEADER": {
         "CONTACTS": "جهات الاتصال",

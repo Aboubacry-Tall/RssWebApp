@@ -1,20 +1,22 @@
-<div class="shadow-4" style="background-color: #2C3DBB;">
-    <div class="flex justify-content-around align-items-center p-2 text-white">
-        <img src="images/logo.png" (click)="redirecTo('home')" class="h-2rem" alt="Logo" style="cursor: pointer;">
+<div class="shadow-4" style="background-color: #3626A7;">
+    <div class="flex justify-content-center align-items-center p-2 text-white">
         <div>
-            <p style="font-size: 18px;">{{'app_name' | translate }}</p>
-            <!-- <strong (click)="redirecTo('contact')" style="cursor: pointer;">{{ 'MENU.CONTACT' | translate }}</strong> -->
+            <img src="images/logo.png" (click)="redirecTo('home')" class="h-3rem" alt="Logo" style="cursor: pointer;">
         </div>
-        <div>|</div>
-        <div (click)="redirecTo('source/category', 'economie')" style="cursor: pointer;">{{ 'MENU.ECONOMY' | translate }}</div>
-        <div>|</div>
-        <div (click)="redirecTo('source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.POLITICS' | translate }}</div>
-        <div>|</div>
-        <div (click)="redirecTo('source/category', 'sport')" style="cursor: pointer;">{{ 'MENU.SPORTS' | translate }}</div>
-        <div>|</div>
-        <div (click)="redirecTo('sources')" style="cursor: pointer;">{{ 'MENU.SOURCES' | translate }}</div>
-        <div>|</div>
-        <div style="cursor: pointer;"><p-chip (click)="setLanguage()" label="{{getLanguage()}}"/></div>
+        <div>
+            <span class="mx-3 font-bold" style="font-size: 20px;">{{'app_name' | translate }}</span>
+        </div>
+       
+        <div>
+            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'economie')" style="cursor: pointer;">{{ 'MENU.ECONOMY' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.POLITICS' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.TECHNOLOGIES' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'sport')" style="cursor: pointer;">{{ 'MENU.SPORTS' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('sources')" style="cursor: pointer;">{{ 'MENU.SOURCES' | translate }}</span>
+        </div>
+        <div class="mx-3" style="cursor: pointer;">
+            <p-chip><i class="pi pi-language" (click)="setLanguage()" style="font-size: 1.2rem"></i></p-chip>
+        </div>
     </div>
 </div>
 
