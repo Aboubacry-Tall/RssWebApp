@@ -1,0 +1,31 @@
+article-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.article-content {
+  overflow: hidden;
+}
+
+.article-image {
+  float: left;
+  width: 240px;
+  height: auto;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.article-text {
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .article-image {
+      float: none;
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 100%;
+  }
+}

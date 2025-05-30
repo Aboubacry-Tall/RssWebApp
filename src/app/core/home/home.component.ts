@@ -11,7 +11,9 @@ import { ArticleService } from '../../modules/article/article.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  source_id = '';
   sources = signal<Source[]>([]);
+  articles = signal<Article[]>([]);
   articlesBySource = signal<Map<string, Article[]>>(new Map());
   window = signal<Map<string, boolean>>(new Map());
   language: string = "fr";
@@ -23,6 +25,7 @@ export class HomeComponent {
       this.language = localStorage.getItem("language") ?? 'fr';  
     } 
     this.getSources();
+    this.getElWassatArticles();
   }
 
   getSources() {
@@ -64,10 +67,26 @@ export class HomeComponent {
     });
   }
 
+  getElWassatArticles() {
+    this.articles.set([]);
+    this.articleService.getArticlesWassat(this.language).subscribe({
+      next: (data) => {
+        if (data && Array.isArray(data)) {
+
+          this.articles.set(data);
+          this.source_id = this.articles()[0].source_id;
+        }
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des articles:', error);
+        this.articles.set([]);
+      }
+    });
+  }
+
   // Utils
   redirectTo(article: Article) {
     this.articleService.updateArticleVisits(article).subscribe((data) => {
-      console.log(data);
     });
     window.open(article.content_url, '_blank');
   }

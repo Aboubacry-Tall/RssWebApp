@@ -3,6 +3,12 @@ import {
   Ripple
 } from "./chunk-J5YFFZU3.js";
 import {
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+  NgControlStatus,
+  NgModel
+} from "./chunk-MII2QQMF.js";
+import {
   BaseComponent
 } from "./chunk-WYQXDSHZ.js";
 import {
@@ -14,12 +20,6 @@ import {
   equals,
   resolveFieldData
 } from "./chunk-VSB7ZPLB.js";
-import {
-  FormsModule,
-  NG_VALUE_ACCESSOR,
-  NgControlStatus,
-  NgModel
-} from "./chunk-MII2QQMF.js";
 import {
   CommonModule,
   NgClass,

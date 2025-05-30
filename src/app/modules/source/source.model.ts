@@ -10,5 +10,5 @@ export interface Source {
   language: 'fr' | 'ar' | 'en'; // fields.Selection([('fr', 'Français'), ('ar', 'Arabe'), ('en', 'Anglais')], string='Language', default='fr')
   article_ids: string[]; // fields.One2many('news.article', 'source_id', string='Articles')
   is_gov: boolean;
-  
+  is_wassat: boolean;
 }

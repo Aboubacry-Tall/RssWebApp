@@ -23,4 +23,12 @@ export class ArticleService {
   getArticleByCategory(category: string, language: string): Observable<Article[]>{
     return this.http.get<Article[]>(this.baseUrl + '/articles/category/' + category + '/' + language);
   }
+
+  getArticlesWassat(language: string): Observable<Article[]>{
+    return this.http.get<Article[]>(this.baseUrl + '/articles/wassat/' + language);
+  }
+
+  getArticleById(articleId: string): Observable<Article>{
+    return this.http.get<Article>(this.baseUrl + '/articles/' + articleId);
+  }
 }

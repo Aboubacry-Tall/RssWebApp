@@ -5,6 +5,7 @@ import { SourcesComponent } from './modules/source/sources/sources.component';
 import { SourceComponent } from './modules/source/source/source.component';
 import { CategoryComponent } from './core/category/category.component';
 import { ContactComponent } from './core/contact/contact.component';
+import { ArticleComponent } from './modules/article/article/article.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'source/category/:category',
     component : CategoryComponent
+  },
+  {
+    path: 'articles/:id',
+    component : ArticleComponent
   },
 ];
 
