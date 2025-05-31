@@ -86,8 +86,10 @@ export class HomeComponent {
 
   // Utils
   redirectTo(article: Article) {
+    console.log(article);
     this.articleService.updateArticleVisits(article).subscribe((data) => {
+      window.open(article.content_url, '_blank');
     });
-    window.open(article.content_url, '_blank');
+    
   }
 }

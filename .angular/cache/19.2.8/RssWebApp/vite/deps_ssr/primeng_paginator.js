@@ -16,9 +16,6 @@ import {
   Tooltip
 } from "./chunk-TDAHDQNI.js";
 import {
-  Ripple
-} from "./chunk-J5YFFZU3.js";
-import {
   AngleDoubleLeftIcon,
   AngleDoubleRightIcon,
   AngleDownIcon,
@@ -37,6 +34,9 @@ import {
 import "./chunk-64BHXCUN.js";
 import "./chunk-GQ54WHE5.js";
 import "./chunk-N6625Q5J.js";
+import {
+  Ripple
+} from "./chunk-J5YFFZU3.js";
 import {
   BaseComponent
 } from "./chunk-WYQXDSHZ.js";

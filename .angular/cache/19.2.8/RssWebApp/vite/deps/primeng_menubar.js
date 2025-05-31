@@ -1,4 +1,8 @@
 import {
+  Badge,
+  BadgeModule
+} from "./chunk-MH75JXVN.js";
+import {
   Tooltip,
   TooltipModule
 } from "./chunk-646FI7QX.js";
@@ -10,10 +14,6 @@ import {
   Ripple
 } from "./chunk-ANOEE3FZ.js";
 import {
-  Badge,
-  BadgeModule
-} from "./chunk-MH75JXVN.js";
-import {
   AngleDownIcon,
   AngleRightIcon,
   BarsIcon
@@ -24,14 +24,6 @@ import {
 import {
   BaseStyle
 } from "./chunk-4FZVK7SN.js";
-import {
-  RouterLink,
-  RouterLinkActive,
-  RouterModule
-} from "./chunk-2L32HHY2.js";
-import "./chunk-JVF7BPDE.js";
-import "./chunk-6ELC7HWK.js";
-import "./chunk-Z6EPFYWI.js";
 import {
   PrimeTemplate,
   SharedModule,
@@ -46,6 +38,13 @@ import {
   uuid
 } from "./chunk-RW5KCVIE.js";
 import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule
+} from "./chunk-N2UXB6MZ.js";
+import "./chunk-OCQFK4BA.js";
+import "./chunk-6ELC7HWK.js";
+import {
   CommonModule,
   NgClass,
   NgForOf,
@@ -53,6 +52,7 @@ import {
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-JQU2YVTL.js";
+import "./chunk-Z6EPFYWI.js";
 import {
   DOCUMENT,
   isPlatformBrowser

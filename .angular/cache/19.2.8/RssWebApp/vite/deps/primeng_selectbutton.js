@@ -8,17 +8,17 @@ import {
   BaseStyle
 } from "./chunk-4FZVK7SN.js";
 import {
-  FormsModule,
-  NG_VALUE_ACCESSOR,
-  NgControlStatus,
-  NgModel
-} from "./chunk-7Y4FLIJG.js";
-import {
   PrimeTemplate,
   SharedModule,
   equals,
   resolveFieldData
 } from "./chunk-RW5KCVIE.js";
+import {
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+  NgControlStatus,
+  NgModel
+} from "./chunk-7Y4FLIJG.js";
 import {
   CommonModule,
   NgClass,

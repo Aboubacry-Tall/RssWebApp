@@ -10,6 +10,8 @@ import { ArticleService } from '../article.service';
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent {
+  source_id = '';
+  articles = signal<Article[]>([]);
   articleId = 0;
   article = signal<Article>({} as Article);
   loading = signal<boolean>(false);
@@ -22,6 +24,7 @@ export class ArticleComponent {
     }
     this.articleId = this.route.snapshot.params['id'];
     this.getArticleById(this.articleId.toString());
+    this.getElWassatArticles();
   }
 
   getArticleById(articleId: string) {
@@ -29,6 +32,23 @@ export class ArticleComponent {
     this.articleService.getArticleById(articleId).subscribe((data) => {
       this.article.set(data);
       this.loading.set(false);
+    });
+  }
+
+  getElWassatArticles() {
+    this.articles.set([]);
+    this.articleService.getArticlesWassat(this.language).subscribe({
+      next: (data) => {
+        if (data && Array.isArray(data)) {
+
+          this.articles.set(data);
+          this.source_id = this.articles()[0].source_id;
+        }
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des articles:', error);
+        this.articles.set([]);
+      }
     });
   }
 
