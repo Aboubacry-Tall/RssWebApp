@@ -8,11 +8,11 @@
         </div>
        
         <div>
-            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'economie')" style="cursor: pointer;">{{ 'MENU.ECONOMY' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.POLITICS' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.TECHNOLOGIES' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('source/category', 'sport')" style="cursor: pointer;">{{ 'MENU.SPORTS' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('sources')" style="cursor: pointer;">{{ 'MENU.SOURCES' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'economie')" style="cursor: pointer;">{{ 'MENU.ECONOMY' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.POLITICS' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'technologie')" style="cursor: pointer;">{{ 'MENU.TECHNOLOGIE' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'sport')" style="cursor: pointer;">{{ 'MENU.SPORTS' | translate }}</span>
+            <span class="mx-2 font-bold" (click)="redirecTo('/sources')" style="cursor: pointer;">{{ 'MENU.SOURCES' | translate }}</span>
         </div>
         <div class="mx-3" style="cursor: pointer;">
             <p-chip><i class="pi pi-language" (click)="setLanguage()" style="font-size: 1.2rem"></i></p-chip>

@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
   background: linear-gradient(135deg, #BFD7FF, #EBF2FF) !important;
   min-height: 100vh;
 }
@@ -12,6 +12,3 @@ body {
   padding-left: 10% !important;
   padding-right: 10% !important;
 }
-
-// html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

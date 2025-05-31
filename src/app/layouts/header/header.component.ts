@@ -69,7 +69,6 @@ export class HeaderComponent {
   }
 
   redirecTo(url: string, params?: string) {
-    console.log(url);
     
     if (params) {
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
