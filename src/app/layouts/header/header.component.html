@@ -1,25 +1,33 @@
-<div class="shadow-4" style="background-color: #3626A7;">
-    <div class="flex justify-content-center align-items-center p-2 text-white">
-        <div>
-            <img src="images/logo.png" (click)="redirecTo('home')" class="h-3rem" alt="Logo" style="cursor: pointer;">
-        </div>
-        <div>
-            <span class="mx-3 font-bold" style="font-size: 20px;">{{'app_name' | translate }}</span>
-        </div>
-       
-        <div>
-            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'economie')" style="cursor: pointer;">{{ 'MENU.ECONOMY' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'politique')" style="cursor: pointer;">{{ 'MENU.POLITICS' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'technologie')" style="cursor: pointer;">{{ 'MENU.TECHNOLOGIE' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('/source/category', 'sport')" style="cursor: pointer;">{{ 'MENU.SPORTS' | translate }}</span>
-            <span class="mx-2 font-bold" (click)="redirecTo('/sources')" style="cursor: pointer;">{{ 'MENU.SOURCES' | translate }}</span>
-        </div>
-        <div class="mx-3" style="cursor: pointer;">
-            <p-chip><i class="pi pi-language" (click)="setLanguage()" style="font-size: 1.2rem"></i></p-chip>
-        </div>
-    </div>
-</div>
+<div class="header">
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="images/logo.png" alt="Logo" class="logo" (click)="redirecTo('home')">
+        <span class="app-name">{{ 'app_name' | translate }}</span>
+      </div>
+  
 
+      <div class="burger-icon" (click)="toggleMenu()">
+        &#9776;
+      </div>
+  
+     
+      <div class="menu" [ngClass]="{ 'active': menuOpen }">
+        <span (click)="redirecTo('/source/category', 'economie')">{{ 'MENU.ECONOMY' | translate }}</span>
+        <span (click)="redirecTo('/source/category', 'politique')">{{ 'MENU.POLITICS' | translate }}</span>
+        <span (click)="redirecTo('/source/category', 'technologie')">{{ 'MENU.TECHNOLOGIE' | translate }}</span>
+        <span (click)="redirecTo('/source/category', 'sport')">{{ 'MENU.SPORTS' | translate }}</span>
+        <span (click)="redirecTo('/sources')">{{ 'MENU.SOURCES' | translate }}</span>
+      </div>
+  
+     
+      <div class="language-icon">
+        <p-chip>
+          <i class="pi pi-language" (click)="setLanguage()"></i>
+        </p-chip>
+      </div>
+    </div>
+</div> 
+  
 <div class="p-1"></div>
 
 <div style="padding-left: 10% !important; padding-right: 10% !important;">
@@ -43,33 +51,3 @@
 </div>
 
 <div class="p-1"></div>
-
-    <!-- <div class="flex justify-content-between align-items-center p-2" style="background-color: #28603E;">
-    <div class="flex-none">
-        <img src="images/logo.png" class="h-3rem" alt="Logo"> <span class="text-white text-3xl">{{ 'app_name' | translate }}</span>
-    </div>
-    <div class="flex-1 text-right">
-        <div class="flex align-items-center justify-content-end gap-3">
-            <p-chip [label]="getLanguage()" icon="pi pi-language" (click)="setLanguage()" [style]="{'cursor': 'pointer'}" />
-            <p-button [label]="'HEADER.PHONE' | translate" [rounded]="true" severity="secondary" />
-        </div>
-    </div>
-</div>
-<div class="flex">
-    <div class="flex-1">
-        @if (primaryPub()) {
-            <a [href]="primaryPub()?.url" target="_blank">
-                <img [src]="'data:image/jpeg;base64,' + primaryPub()?.image" class="w-full h-8rem md:h-10rem"
-                    [alt]="primaryPub()?.name">
-            </a>
-        }
-    </div>
-    <div class="flex-1">
-        @if (secondaryPub()) {
-            <a [href]="secondaryPub()!.url" target="_blank">
-                <img [src]="'data:image/jpeg;base64,' + secondaryPub()!.image" class="w-full h-8rem md:h-10rem"
-                    [alt]="secondaryPub()!.name">
-            </a>
-        }
-    </div>
-</div> -->

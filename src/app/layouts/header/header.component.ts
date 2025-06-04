@@ -16,6 +16,7 @@ export class HeaderComponent {
   secondaryPub = signal<Pub>({} as Pub);
   language: string = "";
   ltrrtl: string = 'rtl';
+  menuOpen = false;
   constructor(public pubService: PubService, public translate: TranslateService, public router: Router) { 
     this.translate.onLangChange.subscribe((event) => {
       this.language = event.lang;
@@ -50,11 +51,10 @@ export class HeaderComponent {
   }
 
   setLanguage() {
+    console.log(this.language);
     if (this.language == 'ar') {
-        // this.translate.use('fr');
         localStorage.setItem("language", "fr");
     } else {
-        // this.translate.use('ar');
         localStorage.setItem("language", "ar");
     }
     window.location.reload();
@@ -77,5 +77,11 @@ export class HeaderComponent {
     }else {
       this.router.navigate([url]);
     }
+  }
+
+  
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }

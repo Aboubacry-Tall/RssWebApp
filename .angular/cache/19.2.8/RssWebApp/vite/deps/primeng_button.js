@@ -1,14 +1,14 @@
 import {
-  Badge,
-  BadgeModule
-} from "./chunk-MH75JXVN.js";
-import {
   AutoFocus
 } from "./chunk-MQAKJWSW.js";
 import "./chunk-5G7WYC4N.js";
 import {
   Ripple
 } from "./chunk-ANOEE3FZ.js";
+import {
+  Badge,
+  BadgeModule
+} from "./chunk-MH75JXVN.js";
 import {
   SpinnerIcon
 } from "./chunk-4LJGRKPH.js";

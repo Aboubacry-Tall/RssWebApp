@@ -3,12 +3,12 @@ import {
   AutoFocus
 } from "./chunk-ZLTUB5QI.js";
 import {
+  Ripple
+} from "./chunk-J5YFFZU3.js";
+import {
   SpinnerIcon
 } from "./chunk-IEO5PCED.js";
 import "./chunk-N6625Q5J.js";
-import {
-  Ripple
-} from "./chunk-J5YFFZU3.js";
 import {
   Badge,
   BadgeModule

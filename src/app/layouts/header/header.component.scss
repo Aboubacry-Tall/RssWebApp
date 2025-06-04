@@ -1,0 +1,78 @@
+.header {
+    background-color: #3626A7;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 48px;
+    cursor: pointer;
+  }
+  
+  .app-name {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .menu span {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .language-icon {
+    cursor: pointer;
+  }
+  
+  .burger-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .burger-icon {
+      display: block;
+    }
+  
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .language-icon {
+      margin-top: 10px;
+    }
+  }  

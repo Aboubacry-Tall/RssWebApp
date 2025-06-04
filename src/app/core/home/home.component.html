@@ -3,7 +3,7 @@
         <div class="shadow-4 bg-white border-round-xl" >
             <div class="text-lg mb-2" [routerLink]="['/sources', source_id]" style="cursor: pointer; font-weight: bold;">
                 <span class="border mt-1" style="background-color: #3626A7;">
-                    El Wassat
+                    {{ 'el_wassat' | translate }}
                 </span>
             </div>
             @if (articles().length) {
