@@ -1,0 +1,19 @@
+.text-primary {
+  color: #2196F3;
+}
+
+:host ::ng-deep .p-card {
+  margin-top: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+:host ::ng-deep .p-button.p-button-lg {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+}
+
+.pi-exclamation-circle {
+  font-size: 5rem;
+  color: #2196F3;
+}

@@ -21,6 +21,7 @@ export class HomeComponent {
   constructor(public sourceService: SourceService, public articleService: ArticleService) { }
 
   ngOnInit() {
+    
     if (typeof window !== 'undefined' && window.localStorage) {
       this.language = localStorage.getItem("language") ?? 'fr';  
     } 
@@ -84,12 +85,7 @@ export class HomeComponent {
     });
   }
 
-  // Utils
-  redirectTo(article: Article) {
-    console.log(article);
-    this.articleService.updateArticleVisits(article).subscribe((data) => {
-      window.open(article.content_url, '_blank');
-    });
-    
+  redirect(url: string) {
+    window.open(/articles/ + url, '_blank');
   }
 }

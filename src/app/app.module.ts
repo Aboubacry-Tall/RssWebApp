@@ -42,6 +42,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { CategoryComponent } from './core/category/category.component';
 import { ContactComponent } from './core/contact/contact.component';
+import { NotfoundComponent } from './core/notfound/notfound.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { ContactComponent } from './core/contact/contact.component';
     AvisComponent,
     CategoryComponent,
     ContactComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,24 +1,25 @@
 <div class="grid">
     <div class="col-12 md:col-6">
         <div class="shadow-4 bg-white border-round-xl" >
-            <div class="text-lg mb-2" [routerLink]="['/sources', source_id]" style="cursor: pointer; font-weight: bold;">
+            <a class="text-lg mb-2" href="'/sources/' + {{source_id}}" style="cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block;">
                 <span class="border mt-1" style="background-color: #3626A7;">
-                    {{ 'el_wassat' | translate }}
+                  {{ 'el_wassat' | translate }}
                 </span>
-            </div>
+            </a>
             @if (articles().length) {
                 @for (article of articles().slice(0, 2); track $index) {
-                    <div class="mx-2 py-1 px-2" [routerLink]="['/articles', article.id]" style="cursor: pointer;">
-                        <div class="grid">
+                    <a (click)="redirect(article.id)" style="text-decoration: none; color: inherit;">
+                        <div class="mx-2 py-1 px-2" style="cursor: pointer;">
+                          <div class="grid">
                             <div class="col-2">
-                                <img class="border-round-sm" [src]="'data:image/jpeg;base64,' + article.image" [alt]="article.name" style="width: 100%; height: 50px;"/>
+                              <img class="border-round-sm" [src]="'data:image/jpeg;base64,' + article.image" [alt]="article.name" style="width: 100%; height: 50px;"/>
                             </div>
                             <div class="col-10">
-                                <p class="text-sm text-600 m-0">{{article.name}}</p>
+                              <p class="text-sm text-600 m-0">{{article.name}}</p>
                             </div>
+                          </div>
                         </div>
-                        <!-- <hr class="my-1"> -->
-                    </div>
+                    </a>                      
                 }
             } @else {
                 <p class="text-sm">{{ 'loading' | translate }}</p>
@@ -28,17 +29,22 @@
         <div class="p-1"></div>
         @for (source of sources().slice(0, sources().length / 2); track $index) {
         <div class="shadow-4 bg-white border-round-xl" >
-            <div class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="cursor: pointer; font-weight: bold;">
-                <span class="border mt-1" style="background-color: #3772FF;">
+            <a href="/sources/{{source.id}}" style="text-decoration: none; color: inherit;">
+                <div class="text-lg mb-2" style="cursor: pointer; font-weight: bold;">
+                  <span class="border mt-1" style="background-color: #3772FF;">
                     {{source.name}}
-                </span>
-            </div>
+                  </span>
+                </div>
+            </a>
+              
             @if (articlesBySource().get(source.id)?.length) {
                 @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
-                    <div class="mx-2 py-1 px-2" (click)=redirectTo(article) style="cursor: pointer;">
-                        <p class="text-sm text-600 m-0">{{article.name}}</p>
-                        <hr class="my-1">
-                    </div>
+                    <a href="{{article.content_url}}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        <div class="mx-2 py-1 px-2" style="cursor: pointer;">
+                          <p class="text-sm text-600 m-0">{{article.name}}</p>
+                          <hr class="my-1">
+                        </div>
+                    </a>                      
                 }
             } @else {
                 <p class="text-sm">{{ 'loading' | translate }}</p>
@@ -50,17 +56,21 @@
     <div class="col-12 md:col-6">
         @for (source of sources().slice(sources().length / 2); track $index) {
         <div class="shadow-4 bg-white border-round-xl">
-            <div class="text-lg mb-2" [routerLink]="['/sources', source.id]" style="cursor: pointer; font-weight: bold;"> 
-                <span class="border mt-1" style="background-color: #3772FF;">
+            <a href="/sources/{{source.id}}" style="text-decoration: none; color: inherit;">
+                <div class="text-lg mb-2" style="cursor: pointer; font-weight: bold;">
+                  <span class="border mt-1" style="background-color: #3772FF;">
                     {{source.name}}
-                </span>
-            </div>
+                  </span>
+                </div>
+            </a>
             @if (articlesBySource().get(source.id)?.length) {
                 @for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
-                    <div class="mx-2 py-1 px-2" (click)=redirectTo(article) style="cursor: pointer;">
-                        <p class="text-sm text-600 m-0">{{article.name}}</p>
-                        <hr class="my-1">
-                    </div>
+                    <a href="{{article.content_url}}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        <div class="mx-2 py-1 px-2" style="cursor: pointer;">
+                          <p class="text-sm text-600 m-0">{{article.name}}</p>
+                          <hr class="my-1">
+                        </div>
+                    </a>  
                 }
             } @else {
                 <p class="text-sm">{{ 'loading' | translate }}</p>
