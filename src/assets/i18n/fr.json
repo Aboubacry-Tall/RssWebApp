@@ -1,7 +1,7 @@
 {
     "el_wassat": "El Wassat",
     "actualite": "Actualité",
-    "app_name": "Centre El Wassat Mauritanie",
+    "app_name": "El Wassat Mauritanie",
     "loading": "Chargement des articles...",
     "see_more": "Voir plus",
     "contacts": "Contacts",
@@ -38,6 +38,6 @@
         "BACK_HOME": "Retour à l'accueil"
     },
     "FOOTER": {
-        "COPYRIGHT": "© 2025 Plateforme Centre El Wassat El Mauritanie. Tous droits réservés."
+        "COPYRIGHT": "© 2025 Plateforme El Wassat El Mauritanie. Tous droits réservés."
     }
 }

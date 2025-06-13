@@ -1,14 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
+/* styles.css (ou votre fichier global) */
 body {
   margin: 0;
   padding: 0 !important;
   background: linear-gradient(135deg, #BFD7FF, #EBF2FF) !important;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.body-container{
+.body-container {
   padding-left: 10% !important;
   padding-right: 10% !important;
+  flex: 1; /* Prend tout l'espace disponible */
+}
+
+app-footer {
+  margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+/* Styles existants du footer (à adapter selon votre composant) */
+.footer-container {
+  padding: 2rem;
+  background-color: #3626A7;
+  color: #FFFFFF;
+  width: 100%;
 }
