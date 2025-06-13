@@ -1,0 +1,43 @@
+{
+    "el_wassat": "El Wassat",
+    "actualite": "News",
+    "app_name": "El Wassat Mauritania",
+    "loading": "Loading articles...",
+    "see_more": "See more",
+    "contacts": "Contacts",
+    "SOURCES": {
+        "LATEST_ARTICLES": "Latest articles",
+        "ARTICLES_COUNT": "Number of articles",
+        "GOVERNMENT": "Government source",
+        "TITLE": "Source"
+    },
+    "CATEGORY": {
+        "TITLE": "Category"
+    },
+    "MENU": {
+        "HOME": "Home",
+        "CONTACT": "Contact us",
+        "ECONOMY": "Economy",
+        "POLITICS": "Politics",
+        "TECHNOLOGIE": "Technology",
+        "SPORTS": "Sports",
+        "SOURCES": "Sources"
+    },
+    "HEADER": {
+        "CONTACTS": "Contacts",
+        "PHONE": "(222) 48-0048-94",
+        "SOCIAL": {
+            "FACEBOOK": "Follow us on Facebook",
+            "LINKEDIN": "Follow us on LinkedIn",
+            "EMAIL": "Contact us by email"
+        }
+    },
+    "NOTFOUND": {
+        "TITLE": "Page not found",
+        "MESSAGE": "The page you are looking for does not exist or has been moved.",
+        "BACK_HOME": "Back to home"
+    },
+    "FOOTER": {
+        "COPYRIGHT": "© 2025 El Wassat Mauritania Platform. All rights reserved."
+    }
+}
