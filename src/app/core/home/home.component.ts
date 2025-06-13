@@ -84,8 +84,4 @@ export class HomeComponent {
       }
     });
   }
-
-  redirect(url: string) {
-    window.open(/articles/ + url, '_blank');
-  }
 }
