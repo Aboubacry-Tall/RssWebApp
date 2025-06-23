@@ -35,7 +35,7 @@
 <div style="padding-left: 10% !important; padding-right: 10% !important;">
     <div class="flex justify-content-between align-items-center">
       <div class="flex-1">
-        @if (primaryPub()) {
+        @if (primaryPub() && primaryPub()?.image) {
           <a [href]="primaryPub()?.url" target="_blank">
             <img class="pub-image"
                  [src]="'data:image/jpeg;base64,' + primaryPub()?.image"
@@ -45,7 +45,7 @@
         }
       </div>
       <div class="flex-1">
-        @if (secondaryPub()) {
+        @if (secondaryPub() && secondaryPub()!.image) {
           <a [href]="secondaryPub()!.url" target="_blank">
             <img class="pub-image"
                  [src]="'data:image/jpeg;base64,' + secondaryPub()!.image"

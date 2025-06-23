@@ -31,34 +31,11 @@ export class HomeComponent {
 
   getSources() {
     this.sourceService.getSources(this.language).subscribe((data) => {
-      // 1. Regrouper les sources par pays
-      const sourcesByCountry = new Map<string, any[]>();
-  
-      data.forEach(source => {
-        const countryName = source.country_name || 'Autre';
-        if (!sourcesByCountry.has(countryName)) {
-          sourcesByCountry.set(countryName, []);
-        }
-        sourcesByCountry.get(countryName)?.push(source);
-      });
-  
-      // 2. Pour chaque pays, trier les sources (gouvernementale d'abord)
-      const sortedSources: any[] = [];
-  
-      sourcesByCountry.forEach((sources, country) => {
-        const gov = sources.filter(s => s.is_gov);
-        const others = sources.filter(s => !s.is_gov).sort((a, b) => a.name.localeCompare(b.name));
-        sortedSources.push(...gov, ...others);
-      });
-  
-      // 3. Set dans le store
-      this.sources.set(sortedSources);
-  
-      // 4. Récupérer les articles
-      sortedSources.forEach(source => this.getArticlesBySourceId(source.id));
+      console.log(data);
+      this.sources.set(data);
+      data.forEach(source => this.getArticlesBySourceId(source.id));
     });
   }
-  
 
   getArticlesBySourceId(sourceId: string) {
     this.articleService.getArticleBySourceId(sourceId, this.language).subscribe((data) => {
@@ -68,11 +45,12 @@ export class HomeComponent {
     });
   }
 
+
   getElWassatArticles() {
     this.articles.set([]);
     this.articleService.getArticlesWassat(this.language).subscribe({
       next: (data) => {
-        if (data && Array.isArray(data)) {
+        if (data && Array.isArray(data) && data.length > 0) {
 
           this.articles.set(data);
           this.source_id = this.articles()[0].source_id;
