@@ -89,7 +89,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist
 
 # Gatsby files
 .cache/
@@ -138,7 +138,7 @@ dist
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
+# /dist
 /tmp
 /out-tsc
 /bazel-out
@@ -177,3 +177,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/.angular

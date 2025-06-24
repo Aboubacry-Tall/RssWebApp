@@ -11,4 +11,5 @@ export interface Source {
   article_ids: string[]; // fields.One2many('news.article', 'source_id', string='Articles')
   is_gov: boolean;
   is_wassat: boolean;
+  position: number;
 }

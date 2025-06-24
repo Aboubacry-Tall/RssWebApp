@@ -6,11 +6,12 @@ import { SourceComponent } from './modules/source/source/source.component';
 import { CategoryComponent } from './core/category/category.component';
 import { ContactComponent } from './core/contact/contact.component';
 import { ArticleComponent } from './modules/article/article/article.component';
+import { NotfoundComponent } from './core/notfound/notfound.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: HomeComponent,
     pathMatch: 'full'
   },
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
     path: 'articles/:id',
     component : ArticleComponent
   },
+  {
+    path: '**',
+    component: NotfoundComponent
+  }
 ];
 
 @NgModule({

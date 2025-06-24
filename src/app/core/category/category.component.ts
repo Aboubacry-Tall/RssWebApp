@@ -16,6 +16,8 @@ export class CategoryComponent {
   language: string = "fr";
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
+  
+
   ngOnInit() {
     if (typeof window !== 'undefined' && window.localStorage) {
       this.language = localStorage.getItem("language") ?? 'fr';  

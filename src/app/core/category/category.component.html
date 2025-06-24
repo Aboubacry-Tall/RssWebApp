@@ -1,25 +1,27 @@
-<div class="grid">
-    <div class="col-12">
-        <div class="grid">
-            @if (loading()) {
-                <div class="col-12 flex justify-content-center align-items-center" style="min-height: 200px;">
+
+        
+@if (loading()) {
+                <div class="col-12 flex justify-content-center align-items-center" style="min-height: 100px;">
                     <p-progressSpinner strokeWidth="4" />
                 </div>
             } @else {
+                <div class="px-2 border-round-sm" style="background-color: gainsboro;">
+                    <p class="text-3xl p-2 text-md">{{ 'CATEGORY.TITLE' | translate }} : {{category}}</p>
+                </div>
+                <div class="grid">
                 @for (article of articles(); track $index) {
-                    <div class="col-8 md:col-6 lg:col-4">
+                    <div class="col-12 md:col-6 lg:col-4">
                         <p-card styleClass="h-full">
                             <h4 class="text-xl mb-2">{{article.name}}</h4>
                             <div class="flex justify-content-between align-items-center">
                                 <span class="text-sm text-500">{{article.published_date | date}}</span>
                                 <p-button styleClass="p-button-outlined" [rounded]="true" severity="secondary"
-                                    icon="pi pi-external-link" label="Lire plus"
+                                    icon="pi pi-external-link" label="{{ 'see_more' | translate }}"
                                     (onClick)="redirectTo(article)"></p-button>
                             </div>
                         </p-card>
                     </div>
                 }
+            </div>
             }
-        </div>
-    </div>
-</div>
+        

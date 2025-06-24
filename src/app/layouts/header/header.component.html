@@ -1,7 +1,9 @@
 <div class="header">
     <div class="header-content">
       <div class="logo-container">
-        <img src="images/logo.png" alt="Logo" class="logo" (click)="redirecTo('home')">
+        
+        <img [routerLink]="['/home']" src="images/logo.png" alt="Logo" class="logo" style="cursor: pointer;">
+        
         <span class="app-name">{{ 'app_name' | translate }}</span>
       </div>
   
@@ -32,21 +34,27 @@
 
 <div style="padding-left: 10% !important; padding-right: 10% !important;">
     <div class="flex justify-content-between align-items-center">
-        <div class="flex-1">
-            @if (primaryPub()) {
-                <a [href]="primaryPub()?.url" target="_blank">
-                    <img [src]="'data:image/jpeg;base64,' + primaryPub()?.image" [alt]="primaryPub()?.name" style="width: 100%; height: 80px;">
-                </a>
-            }
-        </div>
-        <div class="flex-1">
-            @if (secondaryPub()) {
-                <a [href]="secondaryPub()!.url" target="_blank">
-                    <img [src]="'data:image/jpeg;base64,' + secondaryPub()!.image" style="width: 100%; height: 80px;"
-                        [alt]="secondaryPub()!.name">
-                </a>
-            }
-        </div>
+      <div class="flex-1">
+        @if (primaryPub() && primaryPub()?.image) {
+          <a [href]="primaryPub()?.url" target="_blank">
+            <img class="pub-image"
+                 [src]="'data:image/jpeg;base64,' + primaryPub()?.image"
+                 [alt]="primaryPub()?.name"
+                 style="width: 100%; height: 80px;">
+          </a>
+        }
+      </div>
+      <div class="flex-1">
+        @if (secondaryPub() && secondaryPub()!.image) {
+          <a [href]="secondaryPub()!.url" target="_blank">
+            <img class="pub-image"
+                 [src]="'data:image/jpeg;base64,' + secondaryPub()!.image"
+                 [alt]="secondaryPub()!.name"
+                 style="width: 100%; height: 80px;">
+          </a>
+        }
+      </div>
+      
     </div>
 </div>
 

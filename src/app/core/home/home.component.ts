@@ -12,6 +12,8 @@ import { ArticleService } from '../../modules/article/article.service';
 })
 export class HomeComponent {
   source_id = '';
+  leftSources = signal<Source[]>([]);
+  rightSources = signal<Source[]>([]);
   sources = signal<Source[]>([]);
   articles = signal<Article[]>([]);
   articlesBySource = signal<Map<string, Article[]>>(new Map());
@@ -21,6 +23,7 @@ export class HomeComponent {
   constructor(public sourceService: SourceService, public articleService: ArticleService) { }
 
   ngOnInit() {
+    
     if (typeof window !== 'undefined' && window.localStorage) {
       this.language = localStorage.getItem("language") ?? 'fr';  
     } 
@@ -28,36 +31,28 @@ export class HomeComponent {
     this.getElWassatArticles();
   }
 
-  getSources() {
+    getSources() {
     this.sourceService.getSources(this.language).subscribe((data) => {
-      // 1. Regrouper les sources par pays
-      const sourcesByCountry = new Map<string, any[]>();
-  
-      data.forEach(source => {
-        const countryName = source.country_name || 'Autre';
-        if (!sourcesByCountry.has(countryName)) {
-          sourcesByCountry.set(countryName, []);
+      const sortedSources = data.sort((a, b) => a.position - b.position);
+
+      const left: any[] = [];
+      const right: any[] = [];
+
+      sortedSources.forEach((source, index) => {
+        if (index % 2 === 0) {
+          left.push(source); // index pair → gauche
+        } else {
+          right.push(source); // index impair → droite
         }
-        sourcesByCountry.get(countryName)?.push(source);
       });
-  
-      // 2. Pour chaque pays, trier les sources (gouvernementale d'abord)
-      const sortedSources: any[] = [];
-  
-      sourcesByCountry.forEach((sources, country) => {
-        const gov = sources.filter(s => s.is_gov);
-        const others = sources.filter(s => !s.is_gov).sort((a, b) => a.name.localeCompare(b.name));
-        sortedSources.push(...gov, ...others);
-      });
-  
-      // 3. Set dans le store
-      this.sources.set(sortedSources);
-  
-      // 4. Récupérer les articles
+
+      this.leftSources.set(left);
+      this.rightSources.set(right);
+
       sortedSources.forEach(source => this.getArticlesBySourceId(source.id));
     });
   }
-  
+
 
   getArticlesBySourceId(sourceId: string) {
     this.articleService.getArticleBySourceId(sourceId, this.language).subscribe((data) => {
@@ -71,7 +66,7 @@ export class HomeComponent {
     this.articles.set([]);
     this.articleService.getArticlesWassat(this.language).subscribe({
       next: (data) => {
-        if (data && Array.isArray(data)) {
+        if (data && Array.isArray(data) && data.length > 0) {
 
           this.articles.set(data);
           this.source_id = this.articles()[0].source_id;
@@ -82,14 +77,5 @@ export class HomeComponent {
         this.articles.set([]);
       }
     });
-  }
-
-  // Utils
-  redirectTo(article: Article) {
-    console.log(article);
-    this.articleService.updateArticleVisits(article).subscribe((data) => {
-      window.open(article.content_url, '_blank');
-    });
-    
   }
 }
