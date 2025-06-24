@@ -10,6 +10,6 @@ export default `<!doctype html>
 <style>@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}body{margin:0;padding:0!important;background:linear-gradient(135deg,#bfd7ff,#ebf2ff)!important;min-height:100vh;display:flex;flex-direction:column}</style><link rel="stylesheet" href="styles-OLJ635GC.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-OLJ635GC.css"></noscript></head>
 <body ngcm="">
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-VT4ZVGUM.js"><script src="polyfills-WWHGMNZG.js" type="module"></script><script src="main-HJY63IAR.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-VT4ZVGUM.js"><script src="polyfills-WWHGMNZG.js" type="module"></script><script src="main-FPHULZNF.js" type="module"></script></body>
 </html>
 `;
