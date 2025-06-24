@@ -12,6 +12,8 @@ import { ArticleService } from '../../modules/article/article.service';
 })
 export class HomeComponent {
   source_id = '';
+  leftSources = signal<Source[]>([]);
+  rightSources = signal<Source[]>([]);
   sources = signal<Source[]>([]);
   articles = signal<Article[]>([]);
   articlesBySource = signal<Map<string, Article[]>>(new Map());
@@ -29,13 +31,28 @@ export class HomeComponent {
     this.getElWassatArticles();
   }
 
-  getSources() {
+    getSources() {
     this.sourceService.getSources(this.language).subscribe((data) => {
-      console.log(data);
-      this.sources.set(data);
-      data.forEach(source => this.getArticlesBySourceId(source.id));
+      const sortedSources = data.sort((a, b) => a.position - b.position);
+
+      const left: any[] = [];
+      const right: any[] = [];
+
+      sortedSources.forEach((source, index) => {
+        if (index % 2 === 0) {
+          left.push(source); // index pair → gauche
+        } else {
+          right.push(source); // index impair → droite
+        }
+      });
+
+      this.leftSources.set(left);
+      this.rightSources.set(right);
+
+      sortedSources.forEach(source => this.getArticlesBySourceId(source.id));
     });
   }
+
 
   getArticlesBySourceId(sourceId: string) {
     this.articleService.getArticleBySourceId(sourceId, this.language).subscribe((data) => {
@@ -44,7 +61,6 @@ export class HomeComponent {
       this.articlesBySource.set(currentMap);
     });
   }
-
 
   getElWassatArticles() {
     this.articles.set([]);

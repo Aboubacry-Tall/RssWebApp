@@ -27,7 +27,7 @@
 
 		</div>
 		<div class="p-1"></div>
-		@for (source of sources().slice(0, sources().length / 2); track $index) {
+		@for (source of leftSources(); track $index) {
 		<div class="shadow-4 bg-white border-round-xl">
 			<div [routerLink]="['/sources', source.id]" class="text-lg mb-2"
 				style="cursor: pointer; font-weight: bold;">
@@ -42,10 +42,8 @@
 				style="text-decoration: none; color: inherit;">
 				<div class="mx-2 py-1 px-2" style="cursor: pointer;">
 					<p class="text-sm text-600 m-0">{{article.name}}</p>
-					
 				</div>
 			</a>
-			<!-- <hr class="my-1"> -->
 			}
 			} @else {
 			<p class="text-sm">{{ 'loading' | translate }}</p>
@@ -54,8 +52,9 @@
 		<div class="p-1"></div>
 		}
 	</div>
+
 	<div class="col-12 md:col-6">
-		@for (source of sources().slice(sources().length / 2); track $index) {
+		@for (source of rightSources(); track $index) {
 		<div class="shadow-4 bg-white border-round-xl">
 			<div [routerLink]="['/sources', source.id]" class="text-lg mb-2"
 				style="cursor: pointer; font-weight: bold;">
@@ -63,16 +62,15 @@
 					{{source.name}}
 				</span>
 			</div>
+
 			@if (articlesBySource().get(source.id)?.length) {
 			@for (article of articlesBySource().get(source.id)?.slice(0, 2); track $index) {
 			<a href="{{article.content_url}}" target="_blank" rel="noopener noreferrer"
 				style="text-decoration: none; color: inherit;">
 				<div class="mx-2 py-1 px-2" style="cursor: pointer;">
 					<p class="text-sm text-600 m-0">{{article.name}}</p>
-					
 				</div>
 			</a>
-			<!-- <hr class="my-1"> -->
 			}
 			} @else {
 			<p class="text-sm">{{ 'loading' | translate }}</p>
