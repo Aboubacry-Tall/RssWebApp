@@ -39,5 +39,9 @@
     },
     "FOOTER": {
         "COPYRIGHT": "© 2025 Plateforme El Wassat El Mauritanie. Tous droits réservés."
-    }
+    },
+    "economie": "Economie",
+    "politique": "Politique",
+    "technologie": "Technologies",
+    "sport": "Sport"
 }
