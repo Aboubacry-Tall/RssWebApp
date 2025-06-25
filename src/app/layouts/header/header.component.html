@@ -14,15 +14,15 @@
   
      
       <div class="menu" [ngClass]="{ 'active': menuOpen }">
-        <span (click)="redirecTo('/source/category', 'economie')">{{ 'MENU.ECONOMY' | translate }}</span>
-        <span (click)="redirecTo('/source/category', 'politique')">{{ 'MENU.POLITICS' | translate }}</span>
-        <span (click)="redirecTo('/source/category', 'technologie')">{{ 'MENU.TECHNOLOGIE' | translate }}</span>
+        <span (click)="redirecTo('/source/category', 'economie')">{{ 'MENU.economy' | translate }}</span>
+        <span (click)="redirecTo('/source/category', 'politique')">{{ 'MENU.politics' | translate }}</span>
+        <span (click)="redirecTo('/source/category', 'technologie')">{{ 'MENU.technologie' | translate }}</span>
         <span (click)="redirecTo('/source/category', 'sport')">{{ 'MENU.SPORTS' | translate }}</span>
         <span (click)="redirecTo('/sources')">{{ 'MENU.SOURCES' | translate }}</span>
       </div>
   
      
-      <div class="language-icon">
+      <div class="language-icon"> 
         <p-chip>
           <i class="pi pi-language" (click)="setLanguage()"></i>
         </p-chip>
