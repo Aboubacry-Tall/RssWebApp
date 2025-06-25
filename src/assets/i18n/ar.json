@@ -1,7 +1,7 @@
 {
     "el_wassat": "الوسط",
     "actualite": "الأخبار",
-    "app_name": "منصة الموريتاني",
+    "app_name": "الوسط الموريتاني",
     "loading": "جاري تحميل المقالات...",
     "see_more": "عرض المزيد",
     "contacts": "جهات الاتصال",
@@ -17,10 +17,10 @@
     "MENU": {
         "HOME": "الرئيسية",
         "CONTACT": "اتصل بنا",
-        "ECONOMY": "الاقتصاد",
-        "POLITICS": "السياسة",
-        "TECHNOLOGIE": "التكنولوجيا",
-        "SPORTS": "الرياضة",
+        "economy": "الاقتصاد",
+        "politics": "السياسة",
+        "technologie": "التكنولوجيا",
+        "sports": "الرياضة",
         "SOURCES": "المصادر"
     },
     "HEADER": {

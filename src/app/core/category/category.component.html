@@ -6,7 +6,7 @@
                 </div>
             } @else {
                 <div class="px-2 border-round-sm" style="background-color: gainsboro;">
-                    <p class="text-3xl p-2 text-md">{{ 'CATEGORY.TITLE' | translate }} : {{category}}</p>
+                    <p class="text-3xl p-2 text-md">{{ 'CATEGORY.TITLE' | translate }} : {{category | translate}}</p>
                 </div>
                 <div class="grid">
                 @for (article of articles(); track $index) {

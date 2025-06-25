@@ -17,10 +17,10 @@
     "MENU": {
         "HOME": "Accueil",
         "CONTACT": "Contactez-nous",
-        "ECONOMY": "Economie",
-        "POLITICS": "Politique",
-        "TECHNOLOGIE": "Technologies",
-        "SPORTS": "Sport",
+        "economy": "Economie",
+        "politics": "Politique", 
+        "technologie": "Technologies",
+        "sports": "Sport",
         "SOURCES": "Sources"
     },
     "HEADER": {
