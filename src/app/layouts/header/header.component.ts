@@ -14,17 +14,17 @@ export class HeaderComponent {
   pubs = signal<Pub[]>([]);
   primaryPub = signal<Pub | undefined>(undefined);
   secondaryPub = signal<Pub>({} as Pub);
-  language: string = "";
-  ltrrtl: string = 'rtl';
+  language: string = "ar";
+  ltrrtl: string = 'ltr';
   menuOpen = false;
   constructor(public pubService: PubService, public translate: TranslateService, public router: Router) { 
     this.translate.onLangChange.subscribe((event) => {
       this.language = event.lang;
       if (event.lang == 'ar') {
-          this.ltrrtl = 'rtl';
+          this.ltrrtl = 'ltr';
       }
       else {
-          this.ltrrtl = 'ltr';
+          this.ltrrtl = 'rtl';
       }
       document.getElementsByTagName("html")[0].setAttribute('lang', this.language);
       document.getElementsByTagName("body")[0].setAttribute('dir', this.ltrrtl);
