@@ -13,12 +13,12 @@ export class SourceComponent {
   sourceId = 0;
   articles = signal<Article[]>([]);
   loading = signal<boolean>(false);
-  language: string = "fr";
+  language: string = "ar";
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
   ngOnInit() {
     if (typeof window !== 'undefined' && window.localStorage) {
-      this.language = localStorage.getItem("language") ?? 'fr';  
+      this.language = localStorage.getItem("language") ?? 'ar';  
     } 
     this.sourceId = this.route.snapshot.params['id'];
     this.getArticlesBySourceId(this.sourceId.toString());

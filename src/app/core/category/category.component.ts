@@ -13,14 +13,14 @@ export class CategoryComponent {
   category = 'politique';
   articles = signal<Article[]>([]);
   loading = signal<boolean>(false);
-  language: string = "fr";
+  language: string = "ar";
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
   
 
   ngOnInit() {
     if (typeof window !== 'undefined' && window.localStorage) {
-      this.language = localStorage.getItem("language") ?? 'fr';  
+      this.language = localStorage.getItem("language") ?? 'ar';  
     } 
     this.category = this.route.snapshot.params['category'];
     this.getArticlesByCategory(this.category.toString());

@@ -23,7 +23,7 @@ export class SourcesComponent {
 
   ngOnInit() {
     if (typeof window !== 'undefined' && window.localStorage) {
-      this.language = localStorage.getItem('language') ?? 'fr';
+      this.language = localStorage.getItem('language') ?? 'ar';
     }
     this.getSources();
   }

@@ -11,9 +11,9 @@ export class AppComponent {
   title = 'rss-web-app';
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['ar', 'fr']);
-    this.translate.setDefaultLang('fr');
+    this.translate.setDefaultLang('ar');
     if (typeof window !== 'undefined' && window.localStorage) {
-      this.translate.use(localStorage.getItem("language") ?? 'fr');
+      this.translate.use(localStorage.getItem("language") ?? 'ar');
     } 
     
   }

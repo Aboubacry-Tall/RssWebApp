@@ -15,12 +15,12 @@ export class ArticleComponent {
   articleId = 0;
   article = signal<Article>({} as Article);
   loading = signal<boolean>(false);
-  language: string = "fr";
+  language: string = "ar";
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
   ngOnInit() {
     if (typeof window!== 'undefined' && window.localStorage) {
-      this.language = localStorage.getItem("language")?? 'fr';
+      this.language = localStorage.getItem("language")?? 'ar';
     }
     this.articleId = this.route.snapshot.params['id'];
     this.getArticleById(this.articleId.toString());

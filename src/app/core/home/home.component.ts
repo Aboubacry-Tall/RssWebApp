@@ -18,14 +18,14 @@ export class HomeComponent {
   articles = signal<Article[]>([]);
   articlesBySource = signal<Map<string, Article[]>>(new Map());
   window = signal<Map<string, boolean>>(new Map());
-  language: string = "fr";
+  language: string = "ar";
 
   constructor(public sourceService: SourceService, public articleService: ArticleService) { }
 
   ngOnInit() {
     
     if (typeof window !== 'undefined' && window.localStorage) {
-      this.language = localStorage.getItem("language") ?? 'fr';  
+      this.language = localStorage.getItem("language") ?? 'ar';  
     } 
     this.getSources();
     this.getElWassatArticles();
